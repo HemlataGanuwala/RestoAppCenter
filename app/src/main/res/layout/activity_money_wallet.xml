@@ -28,11 +28,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold"
-                android:paddingLeft="80dp"
+                android:gravity="center"
                 android:text="Money Wallet"
                 android:textColor="@color/colorsplash"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </android.support.v7.widget.Toolbar>
 
@@ -111,7 +111,7 @@
             android:paddingRight="20dp"
             android:text="@string/text1"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
         <TextView
@@ -123,7 +123,7 @@
             android:paddingRight="20dp"
             android:text="@string/text2"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
         <TextView
@@ -135,7 +135,7 @@
             android:paddingRight="20dp"
             android:text="@string/text3"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
         <TextView
@@ -147,7 +147,7 @@
             android:paddingRight="20dp"
             android:text="@string/text4"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
     </LinearLayout>

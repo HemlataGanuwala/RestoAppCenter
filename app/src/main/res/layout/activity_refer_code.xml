@@ -28,11 +28,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold"
-                android:paddingLeft="80dp"
+                android:gravity="center"
                 android:text="Refer and Earn"
                 android:textColor="@color/colorsplash"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </android.support.v7.widget.Toolbar>
 
@@ -54,8 +54,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight=".95"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,48 +69,51 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa_light"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
                 android:paddingRight="20dp"
                 android:text="@string/text1"
                 android:textColor="@color/cardview_dark_background"
-                android:fontFamily="@font/comfortaa_light"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa_light"
                 android:paddingLeft="20dp"
                 android:paddingTop="20dp"
                 android:paddingRight="20dp"
-                android:fontFamily="@font/comfortaa_light"
                 android:text="@string/text2"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa_light"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
-                android:fontFamily="@font/comfortaa_light"
                 android:text="@string/text3"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa_light"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
-                android:fontFamily="@font/comfortaa_light"
                 android:text="@string/text4"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="16sp" />
-
+                android:textSize="14sp" />
 
 
         </LinearLayout>
@@ -147,16 +150,16 @@
             <Button
                 android:id="@+id/btnshare"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="140dp"
-                android:layout_marginRight="140dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginRight="120dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/bg_button"
                 android:fontFamily="@font/comfortaa_light"
                 android:text="Share"
                 android:textAllCaps="false"
                 android:textColor="@color/colorsplash"
-                android:textSize="28sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>

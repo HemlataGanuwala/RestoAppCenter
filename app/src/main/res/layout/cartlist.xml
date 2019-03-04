@@ -74,13 +74,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="20dp"
-                android:layout_weight="1"
+                android:layout_weight=".95"
                 android:background="@android:drawable/editbox_background"
                 android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imgeualto"

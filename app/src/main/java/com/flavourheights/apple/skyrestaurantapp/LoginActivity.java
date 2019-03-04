@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_login);
 
         databaseHelpher = new DatabaseHelpher(this);
-        display();
+//        display();
         textViewrefercode = (EditText) findViewById(R.id.etregrefercode);
         textViewrefercode.setVisibility(View.GONE);
 
@@ -200,6 +200,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         });
 
 
+
         buttonlogin=(Button)findViewById(R.id.btnlogin);
         buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,9 +210,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
                 insertLoginData();
 
-
-
-//                if (username.equals("PhoneNo") || username.equals("Email"))
+               //                if (username.equals("PhoneNo") || username.equals("Email"))
 //                {
 //                    new LoginData().execute();
 //                }else {
@@ -291,7 +290,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         Bundle bundle  = intent.getExtras();
         if (bundle != null)
         {
-//            mobile = (String)bundle.get("MobileNo");
+            mobile = (String)bundle.get("MobileNo");
             emailid = (String)bundle.get("Email");
             pass= (String)bundle.get("Password");
         }
@@ -372,6 +371,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             String email = account.getEmail();
             String givenname = account.getGivenName();
+            Uri givenname1 = account.getPhotoUrl();
             editTextuserid.setText(email);
             // Signed in successfully, show authenticated UI.
             updateUI(true);
@@ -622,7 +622,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
             {
                 List<NameValuePair> params2 = new ArrayList<>();
-                params2.add(new BasicNameValuePair("PhoneNo",phoneno));
+                params2.add(new BasicNameValuePair("PhoneNo",mobile));
                 params2.add(new BasicNameValuePair("Email", username));
                 params2.add(new BasicNameValuePair("Password", password));
                 params2.add(new BasicNameValuePair("ReferCode",refercode));
@@ -653,7 +653,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
             if (Status == 1) {
 
-                if (username.equals(emailid) && password.equals(pass)) {
+                if (username.equals(emailid) || mobile.equals(phoneno) && password.equals(pass)) {
 
                     if (mcheck.isChecked()) {
                         Boolean boolIscheck = mcheck.isChecked();
@@ -682,32 +682,32 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                 }
             }
 
-            else if (phoneno.equals(mobile) && password.equals(pass)) {
-                if (mcheck.isChecked()) {
-                    Boolean boolIscheck = mcheck.isChecked();
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("pref_name", editTextuserid.getText().toString());
-                    editor.putString("pref_pass", editTextpassword.getText().toString());
-                    editor.putBoolean("pref_check", boolIscheck);
-                    editor.apply();
-                } else {
-                    preferences.edit().clear().apply();
-                }
-
-                Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
-                final GlobalClass globalVariable = (GlobalClass) getApplicationContext();
-                globalVariable.setUsername(username);
-                globalVariable.setloginPassword(password);
-                globalVariable.setMobileNo(mobile);
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("User", username);
-                intent.putExtra("Password", password);
-                startActivity(intent);
-
-//                editTextuserid.setText("");
-//                editTextpassword.setText("");
-
-            }
+//            else if (username.equals(mobile) && password.equals(pass)) {
+//                if (mcheck.isChecked()) {
+//                    Boolean boolIscheck = mcheck.isChecked();
+//                    SharedPreferences.Editor editor = preferences.edit();
+//                    editor.putString("pref_name", editTextuserid.getText().toString());
+//                    editor.putString("pref_pass", editTextpassword.getText().toString());
+//                    editor.putBoolean("pref_check", boolIscheck);
+//                    editor.apply();
+//                } else {
+//                    preferences.edit().clear().apply();
+//                }
+//
+//                Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
+//                final GlobalClass globalVariable = (GlobalClass) getApplicationContext();
+//                globalVariable.setUsername(username);
+//                globalVariable.setloginPassword(password);
+//                globalVariable.setMobileNo(mobile);
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                intent.putExtra("User", username);
+//                intent.putExtra("Password", password);
+//                startActivity(intent);
+//
+////                editTextuserid.setText("");
+////                editTextpassword.setText("");
+//
+//            }
 
 
 //            else if (username.equals("null") && password.equals("null") || !username.equals(emailid) && !password.equals(pass))
@@ -898,7 +898,6 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                 List<NameValuePair> params2 = new ArrayList<>();
                 params2.add(new BasicNameValuePair("Email",username));
                 params2.add(new BasicNameValuePair("PhoneNo",phoneno));
-
 
                 String jsonStr = shh.makeServiceCall(url, ServiceHandler.POST , params2);
 

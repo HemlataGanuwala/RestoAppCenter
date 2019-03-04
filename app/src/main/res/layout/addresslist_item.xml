@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:drawable/editbox_background"
@@ -25,17 +26,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".60"
                 android:fontFamily="@font/comfortaa_light"
-                android:gravity="right"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
                 android:paddingRight="3dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvaddresstype"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -49,7 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/comfortaa_light"
-                android:gravity="center"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -65,17 +61,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="@font/comfortaa_light"
-                android:gravity="right"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
                 android:paddingRight="3dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvaddlocality"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -91,17 +81,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="@font/comfortaa_light"
-                android:gravity="right"
+                android:gravity="center|left"
+                android:paddingLeft="20dp"
                 android:paddingRight="3dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvaddpincode"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

@@ -190,6 +190,16 @@ public class ItemNonVegFragment extends Fragment {
 
                 }
 
+                @Override
+                public void iconFavouriteImageViewOnClick(View v, int position) {
+
+                }
+
+                @Override
+                public void iconDarkFavouriteImageViewOnClick(View v, int position) {
+
+                }
+
             });
 
         }

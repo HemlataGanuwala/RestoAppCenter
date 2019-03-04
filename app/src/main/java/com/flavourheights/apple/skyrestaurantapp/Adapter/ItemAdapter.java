@@ -40,6 +40,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
 
         void iconImageViewOnClick(View v, int position);
 
+        void iconFavouriteImageViewOnClick(View v, int position);
+
+        void iconDarkFavouriteImageViewOnClick(View v, int position);
 
     }
 
@@ -92,7 +95,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
 
     public class ListHolder extends RecyclerView.ViewHolder {
         TextView textViewitemname,textViewsubitemname,textViewrate;
-        ImageView imageViewitem, imageViewcart;
+        ImageView imageViewitem, imageViewcart, imageViewfavourite, imageViewfavouritedark;
         //LinearLayout parentlayout;
         public ListHolder(View itemView) {
             super(itemView);
@@ -102,7 +105,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
             textViewrate = (TextView) itemView.findViewById(R.id.tvrate);
             imageViewitem = (ImageView) itemView.findViewById(R.id.imgviewitem);
             imageViewcart=(ImageView) itemView.findViewById(R.id.imagecart);
-
+            imageViewfavourite = (ImageView) itemView.findViewById(R.id.imagefavourite);
+            imageViewfavouritedark = (ImageView) itemView.findViewById(R.id.imagefillfavourite);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -128,7 +132,33 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
                 }
             });
 
+            imageViewfavourite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mlistner != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            imageViewfavourite.setVisibility(View.GONE);
+                            imageViewfavouritedark.setVisibility(View.VISIBLE);
+                            mlistner.iconFavouriteImageViewOnClick(v, getAdapterPosition());
+                        }
+                    }
+                }
+            });
 
+            imageViewfavouritedark.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mlistner != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            imageViewfavourite.setVisibility(View.VISIBLE);
+                            imageViewfavouritedark.setVisibility(View.GONE);
+                            mlistner.iconDarkFavouriteImageViewOnClick(v, getAdapterPosition());
+                        }
+                    }
+                }
+            });
         }
     }
 

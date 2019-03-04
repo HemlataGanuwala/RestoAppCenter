@@ -45,22 +45,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:fontFamily="@font/comfortaa_light"
                 android:gravity="center"
                 android:text="Your Payment Status Is"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:fontFamily="@font/comfortaa_light"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:fontFamily="@font/comfortaa_light"
                 android:gravity="center"
                 android:paddingBottom="15dp"
                 android:text="Successful"
                 android:textColor="@color/green"
-                android:textSize="20dp"
-                android:fontFamily="@font/comfortaa_light"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -75,13 +75,13 @@
             android:id="@+id/tvshowmessage"
             android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:fontFamily="@font/comfortaa_light"
             android:gravity="center"
             android:paddingLeft="20dp"
             android:paddingRight="40dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:fontFamily="@font/comfortaa_light"
-            android:textStyle="bold"/>
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

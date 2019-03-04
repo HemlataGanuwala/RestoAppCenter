@@ -55,13 +55,14 @@ public class CartListActivity extends AppCompatActivity implements NavigationVie
     int ammount, totalamount;
     TextView textViewtotlcost;
     int rate,totcount,totalcost;
+    GlobalClass globalVariable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_list);
 
-        final GlobalClass globalVariable = (GlobalClass) getApplicationContext();
+        globalVariable = (GlobalClass) getApplicationContext();
         path = globalVariable.getconstr();
         user = globalVariable.getUsername();
         pass = globalVariable.getloginPassword();
@@ -108,7 +109,7 @@ public class CartListActivity extends AppCompatActivity implements NavigationVie
         imageViewshow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), AddAddressActivity.class);
+                Intent i = new Intent(getApplicationContext(), AddAddress2Activity.class);
                 startActivity(i);
             }
         });
@@ -355,6 +356,7 @@ public class CartListActivity extends AppCompatActivity implements NavigationVie
                 totalamount = totalamount + ammount;
             }
             textViewtotlcost.setText(String.valueOf(totalamount));
+            globalVariable.setOrderCost(String.valueOf(totalamount));
         }
     }
 

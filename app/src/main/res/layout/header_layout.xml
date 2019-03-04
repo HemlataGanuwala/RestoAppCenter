@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_weight=".90"
-            android:src="@drawable/icon_eye" />
+            android:src="@drawable/icon_locations" />
 
     </LinearLayout>
 

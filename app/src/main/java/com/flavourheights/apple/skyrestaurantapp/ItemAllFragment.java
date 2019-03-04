@@ -70,11 +70,14 @@ public class ItemAllFragment extends Fragment{
 
         mPlanetlist1.clear();
 
-        new getAllCount().execute();
 
-        new getAllItem().execute();
 
-        new getAllItemcount().execute();
+            new getAllCount().execute();
+
+            new getAllItem().execute();
+
+            new getAllItemcount().execute();
+
 
 //        sendData();
 
@@ -193,32 +196,51 @@ public class ItemAllFragment extends Fragment{
 //
 //                for (int i=0; i<t1; i++)
 //                {
-                    ItemPlanet planet1 = mPlanetlist1.get(position);
-                    subitem1 = planet1.getSubItemname();
-                    rate1 = planet1.getRate();
+                    if (user != null && pass != null)
+                    {
+                        ItemPlanet planet1 = mPlanetlist1.get(position);
+                        subitem1 = planet1.getSubItemname();
+                        rate1 = planet1.getRate();
 //                }
-                    new getAllItemcount().execute();
+                        new getAllItemcount().execute();
 
-                    try {
-                        Thread.sleep(1000);
-                    } catch (Exception e) {}
+                        try {
+                            Thread.sleep(1000);
+                        } catch (Exception e) {}
 
-                    if (Response == "null")
-                    {
-                        count++;
-                        cnt = String.valueOf(count);
-                        new RegisterData().execute();
+                        if (Response == "null")
+                        {
+                            count++;
+                            cnt = String.valueOf(count);
+                            new RegisterData().execute();
+
+                        }
+                        else
+                        {
+                            Toast.makeText(getActivity(), "Item Already Added", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getActivity(), EditCartActivity.class);
+                            startActivity(intent);
+                        }
+
+                        activityCommunicator.passDataActivity(cnt);
+
+
+                    }else {
+                        Toast.makeText(getActivity(), "Login first", Toast.LENGTH_LONG).show();
                     }
-                    else
-                    {
-                        Toast.makeText(getActivity(), "Item Already Added", Toast.LENGTH_LONG).show();
-                    }
-
-                    activityCommunicator.passDataActivity(cnt);
-
-
-
                 }
+
+                @Override
+                public void iconFavouriteImageViewOnClick(View v, int position) {
+                    new AddFavouriteData().execute();
+                }
+
+                @Override
+                public void iconDarkFavouriteImageViewOnClick(View v, int position) {
+
+                    new deleteFavouriteItem().execute();
+                }
+
 
             });
 
@@ -385,13 +407,121 @@ public class ItemAllFragment extends Fragment{
 
             if (Status == 1)
             {
+
                 Toast.makeText(getActivity(), "Item add in cart", Toast.LENGTH_LONG).show();
                 //new getAllItemcount().execute();
+
             }
 
         }
 
     }
+
+
+    public class AddFavouriteData extends AsyncTask<String,String,String>
+    {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+            shh = new ServiceHandler();
+            String url = path + "Registration/InsertFavouriteData";
+
+            try {
+                List<NameValuePair> params2 = new ArrayList<>();
+                params2.add(new BasicNameValuePair("Username",user));
+                params2.add(new BasicNameValuePair("ItemName",itemname));
+                params2.add(new BasicNameValuePair("SubItemName",subitem1));
+                params2.add(new BasicNameValuePair("ItemRate",rate));
+                params2.add(new BasicNameValuePair("ListImg",img));
+
+                String Jsonstr = shh.makeServiceCall(url ,ServiceHandler.POST , params2);
+
+                if (Jsonstr != null)
+                {
+                    JSONObject c1= new JSONObject(Jsonstr);
+                    Status =c1.getInt("Status");
+                }
+                else{
+                    Toast.makeText(getActivity(), "Data not Found", Toast.LENGTH_SHORT).show();
+                }
+            }
+            catch ( JSONException e){
+                e.printStackTrace();
+            }
+
+
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
+
+    }
+
+    class deleteFavouriteItem extends AsyncTask<String, String, String> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+//                progress = new ProgressDialog(PlaceOrderActivity.this);
+//                progress.setMessage("Loading...");
+//                progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//                progress.setIndeterminate(true);
+//                progress.setProgress(0);
+//                progress.show();
+        }
+
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+            shh = new ServiceHandler();
+            String url = path + "Registration/DeleteFavouriteData";
+
+            try {
+                List<NameValuePair> params2 = new ArrayList<>();
+
+                params2.add(new BasicNameValuePair("UserName", user));
+                params2.add(new BasicNameValuePair("SubItemName", subitem));
+
+                String Jsonstr = shh.makeServiceCall(url, ServiceHandler.POST, params2);
+
+                if (Jsonstr != null) {
+                    JSONObject c1 = new JSONObject(Jsonstr);
+                    Status = c1.getInt("Status");
+                } else {
+                    Toast.makeText(getActivity(), "Data not Found", Toast.LENGTH_SHORT).show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+            return null;
+        }
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            if (Status == 1)
+            {
+                Toast.makeText(getActivity(), "Item deleted form favourite", Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+    }
+
 
 
 }

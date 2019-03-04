@@ -75,7 +75,7 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
         user = globalVariable.getUsername();
         mobileno = globalVariable.getMobileNo();
         password = globalVariable.getloginPassword();
-
+        amount = globalVariable.getOrderCost();
 
 
         new getAllItem().execute();
@@ -88,6 +88,8 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
         textViewenteraddress = (TextView) findViewById(R.id.tventeraddress);
         textViewselectaddress = (TextView) findViewById(R.id.tvselectaddress);
 
+        textViewcost.setText(amount);
+        textViewmobileno.setText(mobileno);
 //        editTextaddress1 = (EditText)findViewById(R.id.etaddress1);
 //        editTextaddress2 = (EditText)findViewById(R.id.etaddress2);
 //        editTextaddress3 = (EditText)findViewById(R.id.etaddress3);
@@ -100,12 +102,10 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
         recyclerView=(RecyclerView)findViewById(R.id.rvaddaddress);
         recyclerView.setLayoutManager(new LinearLayoutManager(PlaceOrderActivity.this));
 
-        display();
-
-
 
         new getAddressData().execute();
 
+//        display();
         //
 //        sdate = DateFormat.getDateInstance().format(new Date());
 //        sday = String.format((String) DateFormat, );
@@ -136,7 +136,6 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PlaceOrderActivity.this,AddAddressActivity.class);
-                intent.putExtra("CustName", custname);
                 startActivity(intent);
             }
         });
@@ -344,7 +343,7 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
                         custlname = a1.getString("CustLastName");
                         refferamount = a1.getString("RAmount");
 
-                        custname = custfname + "  " + custlname;
+                        custname = custfname + " " + custlname;
                     }
                 }
                 else{
@@ -429,6 +428,7 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
+
             if (mPlanetlist.isEmpty())
             {
                 textViewselectaddress.setVisibility(View.GONE);
@@ -446,6 +446,7 @@ public class PlaceOrderActivity extends AppCompatActivity implements AddressAdap
             });
 
             adapter.setOnItemClickListner(PlaceOrderActivity.this);
+
         }
 
     }

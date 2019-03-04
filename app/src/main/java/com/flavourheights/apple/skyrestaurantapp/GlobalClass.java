@@ -9,6 +9,7 @@ public class GlobalClass extends Application {
     public String Username = "";
     public String LoginPassword = "";
     public String MobileNo = "";
+    public String OrderCost = " ";
 
     public String getconstr() {
 
@@ -41,6 +42,14 @@ public class GlobalClass extends Application {
 
         LoginPassword = loginPassword;
 
+    }
+
+    public String getOrderCost() {
+        return OrderCost;
+    }
+
+    public void setOrderCost(String orderCost) {
+        OrderCost = orderCost;
     }
 
     public String getMobileNo() {

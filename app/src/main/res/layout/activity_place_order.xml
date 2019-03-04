@@ -47,15 +47,15 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_weight=".10"
                     android:background="@color/colorsplash"
-                    android:orientation="vertical"
-                    android:layout_weight=".30">
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:orientation="horizontal"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -86,13 +86,12 @@
                             app:fontFamily="@font/comfortaa_light" />
 
 
-
                     </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.3dp"
-                        android:background="#cdc6c6"/>
+                        android:background="#cdc6c6" />
 
                     <TextView
                         android:id="@+id/etmobileno"
@@ -110,11 +109,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.3dp"
-                        android:background="#cdc6c6"/>
+                        android:background="#cdc6c6" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="@color/colorsplash"
                         android:orientation="horizontal">
 
@@ -154,12 +154,13 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.3dp"
-                        android:background="#cdc6c6"/>
+                        android:background="#cdc6c6" />
 
                     <TextView
                         android:id="@+id/tventeraddress"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:layout_weight="1"
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="bottom|center|left"
                         android:hint="Enter Your Address"
@@ -174,6 +175,7 @@
                         android:id="@+id/tvselectaddress"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:layout_weight="1"
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="bottom|center|left"
                         android:hint="Select Your Address"
@@ -188,7 +190,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.3dp"
-                        android:background="#cdc6c6"/>
+                        android:background="#cdc6c6" />
 
                 </LinearLayout>
 
@@ -261,8 +263,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="right"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <Button
@@ -285,16 +288,15 @@
                     android:layout_height="0.3dp"
                     android:background="#cdc6c6"/>
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight=".30">
+                    android:layout_weight=".10"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="center|left"
                         android:paddingLeft="10dp"
@@ -305,12 +307,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.3dp"
-                        android:background="#cdc6c6"/>
+                        android:background="#cdc6c6" />
 
                     <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:layout_weight=".95"
                         android:orientation="vertical">
 
                         <RadioButton
@@ -323,11 +325,6 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.3dp"
-                            android:background="#cdc6c6" />
-
                         <RadioButton
                             android:id="@+id/rbcashpay"
                             android:layout_width="match_parent"
@@ -337,11 +334,6 @@
                             android:text="Cash Payment"
                             android:textSize="14sp"
                             android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.3dp"
-                            android:background="#cdc6c6" />
 
 
                         <RadioButton
@@ -365,25 +357,33 @@
 
                 </LinearLayout>
 
-
-
-                <Button
-                    android:id="@+id/btnproceed"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_button"
-                    android:fontFamily="@font/comfortaa_light"
-                    android:textStyle="bold"
-                    android:text="Proceed"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorsplash"
-                    android:textSize="18sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnproceed"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_button"
+                        android:fontFamily="@font/comfortaa_light"
+                        android:textStyle="bold"
+                        android:text="Proceed"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorsplash"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
+
+
 
 
 

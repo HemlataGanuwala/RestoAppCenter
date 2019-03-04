@@ -152,10 +152,20 @@ public class EditCartAdapter extends RecyclerView.Adapter<EditCartAdapter.ListHo
 
 
                 holder.textViewtotcount.setText(String.valueOf(count));
-                               int totrate = Integer.parseInt(String.valueOf(holder.textViewrate.getText())) * Integer.parseInt(String.valueOf(holder.textViewtotcount.getText()));
+                int totrate = Integer.parseInt(String.valueOf(holder.textViewrate.getText())) * Integer.parseInt(String.valueOf(holder.textViewtotcount.getText()));
 
                 holder.textViewtot.setText(String.valueOf(totrate));
+                mPlanetList.get(holder.getAdapterPosition()).setTotalCost(holder.textViewtot.getText().toString());
+                mPlanetList.get(holder.getAdapterPosition()).setTotalCount(holder.textViewtotcount.getText().toString());
+                for (int i=0; i<mPlanetList.size(); i++)
+                {
+                    String totcst = (mPlanetList.get(i).getTotalCount().toString());
+                    total = total + Integer.parseInt(mPlanetList.get(i).getTotalCost());
 
+
+                }
+
+                clickItemListerner.onOrderItemClick(mPlanetList);
 
             }
         });

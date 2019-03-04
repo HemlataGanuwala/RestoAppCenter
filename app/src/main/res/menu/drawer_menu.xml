@@ -7,52 +7,61 @@
 
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grpmenu">
+    <group
+        android:id="@+id/grpmenu"
+        android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_menu"
-            android:icon="@drawable/menu"
-            android:title="Menu"
+        <item
+            android:id="@+id/nav_menu"
             android:checked="true"
-            />
+            android:icon="@drawable/menu"
+            android:title="Menu" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grpoffer">
+    <group
+        android:id="@+id/grpoffer"
+        android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_offer"
-            android:title="Offer"
+        <item
+            android:id="@+id/nav_offer"
+            android:checked="true"
             android:icon="@drawable/offer"
-            android:checked="true"/>
+            android:title="Offer" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grporderhis">
+    <group
+        android:id="@+id/grporderhis"
+        android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_orderhis"
+        <item
+            android:id="@+id/nav_orderhis"
+            android:checked="true"
             android:icon="@drawable/orderhis"
-            android:title="Order History"
-            android:checked="true"/>
+            android:title="Order History" />
     </group>
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_cartlist"
+        <item
+            android:id="@+id/nav_cartlist"
+            android:checked="true"
             android:icon="@drawable/cartlist"
-            android:title="Cart List"
-            android:checked="true"/>
+            android:title="Cart List" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grpabout">
+    <group
+        android:id="@+id/grpabout"
+        android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_about"
-            android:title="About Us"
+        <item
+            android:id="@+id/nav_about"
+            android:checked="true"
             android:icon="@drawable/aboutus"
-            android:checked="true"/>
+            android:title="About Us" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grpshare">
+    <group
+        android:id="@+id/grpshare"
+        android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_share"
@@ -61,18 +70,20 @@
             android:title="Share with friends" />
     </group>
 
-      <group android:checkableBehavior="single"
-        android:id="@+id/grprefer">
+    <group
+        android:id="@+id/grprefer"
+        android:checkableBehavior="single">
 
-          <item
-              android:id="@+id/nav_refer"
-              android:checked="true"
-              android:icon="@drawable/icon_earns"
-              android:title="Refer Code" />
+        <item
+            android:id="@+id/nav_refer"
+            android:checked="true"
+            android:icon="@drawable/icon_earns"
+            android:title="Refer Code" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grpwallet">
+    <group
+        android:id="@+id/grpwallet"
+        android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_wallet"
@@ -81,8 +92,9 @@
             android:title="Money Wallet" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grprateus">
+    <group
+        android:id="@+id/grprateus"
+        android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_rateus"
@@ -92,22 +104,26 @@
     </group>
 
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grplogin">
+    <group
+        android:id="@+id/grplogin"
+        android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_login"
+        <item
+            android:id="@+id/nav_login"
+            android:checked="true"
             android:icon="@drawable/login"
-            android:title="Login"
-            android:checked="true"/>
+            android:title="Login" />
     </group>
 
-    <group android:checkableBehavior="single"
-        android:id="@+id/grpaccount">
+    <group
+        android:id="@+id/grpaccount"
+        android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_myaccount"
+        <item
+            android:id="@+id/nav_myaccount"
+            android:checked="true"
             android:icon="@drawable/icon_acount"
-            android:title="My Account"
-            android:checked="true"/>
+            android:title="My Account" />
     </group>
 
 </menu>

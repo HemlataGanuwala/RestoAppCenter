@@ -51,13 +51,20 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ListHold
     @Override
     public void onBindViewHolder(@NonNull final ListHolder holder, final int position) {
 
-        holder.textViewcustname.setText(mPlanetList.get(position).getCustName());
-        holder.textViewaddresstype.setText(mPlanetList.get(position).getAddressType());
+        String name = mPlanetList.get(position).getCustName();
+        String addresstype = mPlanetList.get(position).getAddressType();
+        String landmark = mPlanetList.get(position).getLandmark();
+        String locality = mPlanetList.get(position).getLocality();
+        String city = mPlanetList.get(position).getCity();
+        String pincode = mPlanetList.get(position).getPincode();
+
+        holder.textViewcustname.setText(name+ " " +addresstype);
+//        holder.textViewaddresstype.setText(mPlanetList.get(position).getAddressType());
         holder.textViewhousenm.setText(mPlanetList.get(position).getHousename());
-        holder.textViewlandmark.setText(mPlanetList.get(position).getLandmark());
-        holder.textViewlocality.setText(mPlanetList.get(position).getLocality());
-        holder.textViewcity.setText(mPlanetList.get(position).getCity());
-        holder.textViewpincode.setText(mPlanetList.get(position).getPincode());
+        holder.textViewlandmark.setText(landmark+" "+locality);
+//        holder.textViewlocality.setText(mPlanetList.get(position).getLocality());
+        holder.textViewcity.setText(city+" "+pincode);
+//        holder.textViewpincode.setText(mPlanetList.get(position).getPincode());
 
         if (selectedPosition == position)
         {
@@ -102,12 +109,9 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ListHold
             // parentlayout = itemView.findViewById(R.id.list);
 
             textViewcustname = (TextView) itemView.findViewById(R.id.tvcustname);
-            textViewaddresstype = (TextView) itemView.findViewById(R.id.tvaddresstype);
             textViewhousenm = (TextView) itemView.findViewById(R.id.tvaddhouse);
             textViewlandmark = (TextView) itemView.findViewById(R.id.tvaddlandmark);
-            textViewlocality = (TextView) itemView.findViewById(R.id.tvaddlocality);
             textViewcity = (TextView) itemView.findViewById(R.id.tvaddcity);
-            textViewpincode=(TextView) itemView.findViewById(R.id.tvaddpincode);
             imageViewcheck=(ImageView) itemView.findViewById(R.id.imgaddcheck);
 
             imageViewcheck.setVisibility(View.GONE);

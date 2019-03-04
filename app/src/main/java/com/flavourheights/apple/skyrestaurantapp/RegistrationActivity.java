@@ -282,7 +282,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         }
 
-        else if (phoneno.isEmpty() || !Pattern.matches("^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$",phoneno)){
+        else if (phoneno.isEmpty() || !Pattern.matches("^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$",phoneno) && phoneno.length() == 10){
 
             editTextphoneno.setError("Number should be 10-digit");
             valid = false;
@@ -425,10 +425,13 @@ public class RegistrationActivity extends AppCompatActivity {
                     buttonreg.setEnabled(true);
 
                     Toast.makeText(RegistrationActivity.this, "Register Successfully", Toast.LENGTH_SHORT).show();
+                    editTextfname.setText(" ");
+                    editTextlname.setText(" ");
+                    editTextemail.setText(" ");
+                    editTextphoneno.setText(" ");
+                    editTextpass.setText(" ");
+                    editTextconformpass.setText(" ");
                     Intent intent = new Intent(RegistrationActivity.this,LoginActivity.class);
-                    intent.putExtra("MobileNo", phoneno);
-                    intent.putExtra("Email", emailid);
-                    intent.putExtra("Password", password);
                     startActivity(intent);
                 }
 
@@ -440,12 +443,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }
 
-            editTextfname.setText(" ");
-            editTextlname.setText(" ");
-            editTextemail.setText(" ");
-            editTextphoneno.setText(" ");
-            editTextpass.setText(" ");
-            editTextconformpass.setText(" ");
+
 
         }
 

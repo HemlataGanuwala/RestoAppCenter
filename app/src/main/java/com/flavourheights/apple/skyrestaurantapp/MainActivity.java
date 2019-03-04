@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         imageViewshow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), AddAddressActivity.class);
+                Intent i = new Intent(getApplicationContext(), AddAddress2Activity.class);
                 startActivity(i);
             }
         });
@@ -124,9 +124,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         new getAllItem().execute();
 
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {}
+//        try {
+//            Thread.sleep(2000);
+//        } catch (Exception e) {}
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

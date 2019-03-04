@@ -75,7 +75,7 @@ public class CartList2Activity extends AppCompatActivity implements NavigationVi
         imageViewshow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), AddAddressActivity.class);
+                Intent i = new Intent(getApplicationContext(), AddAddress2Activity.class);
                 startActivity(i);
             }
         });
