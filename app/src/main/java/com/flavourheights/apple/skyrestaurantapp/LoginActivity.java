@@ -45,7 +45,6 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.Task;
-import com.squareup.picasso.Picasso;
 
 
 import org.apache.http.NameValuePair;

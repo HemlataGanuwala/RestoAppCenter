@@ -1,5 +1,6 @@
 package com.flavourheights.apple.skyrestaurantapp;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class MyFavoritesActivity extends AppCompatActivity {
     String path, username, itemname, subitemname, rate, image;
     ServiceHandler shh;
     int Status = 1;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MyFavoritesActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclefavourite);
         recyclerView.setLayoutManager(new LinearLayoutManager(MyFavoritesActivity.this));
+
     }
 
     public class getFavouriteItem extends AsyncTask<String, String, String> {
@@ -51,20 +54,25 @@ public class MyFavoritesActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            progress=new ProgressDialog(MyFavoritesActivity.this);
+            progress.setMessage("Loading...");
+            progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progress.setIndeterminate(true);
+            progress.setProgress(0);
+            progress.show();
         }
 
         @Override
         protected String doInBackground(String... strings) {
 
             shh= new ServiceHandler();
-            String url= path + " Registration/GetFavouriteData";
+            String url= path + "Registration/GetFavouriteData";
             Log.d("Url",">"+url);
 
             try {
                 List<NameValuePair> params2 = new ArrayList<>();
 
                 params2.add(new BasicNameValuePair("UserName", username));
-
                 String jsonStr = shh.makeServiceCall(url, ServiceHandler.POST, params2);
 
                 if (jsonStr != null) {
@@ -93,6 +101,8 @@ public class MyFavoritesActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
+            progress.dismiss();
 
             runOnUiThread(new Runnable() {
                 @Override

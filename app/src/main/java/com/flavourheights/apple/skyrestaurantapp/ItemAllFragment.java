@@ -232,6 +232,7 @@ public class ItemAllFragment extends Fragment{
 
                 @Override
                 public void iconFavouriteImageViewOnClick(View v, int position) {
+
                     new AddFavouriteData().execute();
                 }
 

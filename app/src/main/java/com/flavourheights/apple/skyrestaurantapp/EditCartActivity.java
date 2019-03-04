@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditCartActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, EditCartAdapter.ClickOnItemListener{
+public class EditCartActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, EditCartAdapter.ClickOnItemListener, SwipeRefreshLayout.OnRefreshListener{
 
     ImageView imageViewback,imageViewshow, imageViewdelete;
     NavigationView navigationView;
@@ -55,6 +56,7 @@ public class EditCartActivity extends AppCompatActivity implements NavigationVie
     String editsubitem,edittotalcount,edittotalrate;
     CartListPlanet cartListPlanet;
     ArrayList<CartListPlanet> mPlanlist= new ArrayList<CartListPlanet>();
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +70,17 @@ public class EditCartActivity extends AppCompatActivity implements NavigationVie
 
 //        Display();
 
+
+
         new addCartItem().execute();
 
 
         textViewtotlcost=(TextView)findViewById(R.id.tvedittotal_cost);
 
         imageViewback=(ImageView)findViewById(R.id.img_back);
+
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipecartlist);
+        swipeRefreshLayout.setOnRefreshListener(this);
 
         recyclerView=(RecyclerView)findViewById(R.id.recycleeditcartlist);
         recyclerView.setLayoutManager(new LinearLayoutManager(EditCartActivity.this));
@@ -294,6 +301,13 @@ public class EditCartActivity extends AppCompatActivity implements NavigationVie
 
         textViewtotlcost.setText(String.valueOf(totalamt));
 
+    }
+
+    @Override
+    public void onRefresh() {
+//        new addCartItem().execute();
+//        new DeleteItem().execute();
+        swipeRefreshLayout.setRefreshing(false);
     }
 
 

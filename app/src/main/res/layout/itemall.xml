@@ -64,6 +64,12 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/comfortaa_light"
                 android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:id="@+id/tvfavimg"/>
         </LinearLayout>
 
         <LinearLayout

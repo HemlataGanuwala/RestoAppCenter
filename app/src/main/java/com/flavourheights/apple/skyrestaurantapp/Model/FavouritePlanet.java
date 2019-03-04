@@ -5,14 +5,14 @@ public class FavouritePlanet {
     String ItemName;
     String SubItemName;
     String Rate;
-    String Image;
+    String FImage;
 
     public FavouritePlanet(String itemName, String subItemName, String rate, String image)
     {
         this.ItemName = itemName;
         this.SubItemName = subItemName;
         this.Rate =rate;
-        this.Image = image;
+        this.FImage = image;
     }
 
     public String getItemName() {
@@ -39,11 +39,11 @@ public class FavouritePlanet {
         Rate = rate;
     }
 
-    public String getImage() {
-        return Image;
+    public String getFImage() {
+        return FImage;
     }
 
-    public void setImage(String image) {
-        Image = image;
+    public void setFImage(String image) {
+        FImage = image;
     }
 }

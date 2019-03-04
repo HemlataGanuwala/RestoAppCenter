@@ -21,6 +21,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.List
     private List<FavouritePlanet> mPlanetList;
     private OnItemClickListener mListener;
 
+
     public interface OnItemClickListener
     {
         void onItemClick(int position);
@@ -50,7 +51,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.List
         holder.textViewitemname.setText(mPlanetList.get(position).getItemName());
         holder.textViewsubitemname.setText(mPlanetList.get(position).getSubItemName());
         holder.textViewrate.setText(mPlanetList.get(position).getRate());
-        byte[] decodeString = Base64.decode(mPlanetList.get(position).getImage(), Base64.DEFAULT);
+        byte[] decodeString = Base64.decode(mPlanetList.get(position).getFImage(), Base64.DEFAULT);
         Bitmap decodebitmap = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
         holder.imageViewitem.setImageBitmap(decodebitmap);
     }

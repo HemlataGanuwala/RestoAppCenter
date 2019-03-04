@@ -175,6 +175,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View actionView = MenuItemCompat.getActionView(menuItem);
         textViewitemcount = (TextView) actionView.findViewById(R.id.cart_badge);
 
+//        try {
+//            Thread.sleep(2000);
+//        } catch (Exception e) {}
+
         if (count.equals("0") )
         {
             textViewitemcount.setVisibility(View.GONE);

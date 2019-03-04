@@ -1,6 +1,11 @@
 package com.flavourheights.apple.skyrestaurantapp;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +17,7 @@ public class MyAccountActivity extends AppCompatActivity {
 
     TextView textViewprofile, textVieworder, textViewlogout, textViewaddress, textViewfavourites;
     ImageView imageViewback;
+    ServiceHandler shh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +77,38 @@ public class MyAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                SharedPreferences SM = getSharedPreferences("CurrentUser", MODE_PRIVATE);
+                SharedPreferences.Editor edit = SM.edit();
+                edit.remove("UserName");
+                edit.remove("PassWord");
+                edit.commit();
+
+                popupMessage();
+
             }
         });
 
-
     }
+
+    public void popupMessage()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MyAccountActivity.this);
+        builder.setTitle(R.string.app_name);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setMessage("Do you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }

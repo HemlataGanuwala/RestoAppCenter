@@ -22,6 +22,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
     private List<ItemPlanet> mPlanetList;
     private OnItemClickListner mlistner;
     private OnCountClickListener onCountClickListener;
+    int selectedPosition = -1;
 
 
 
@@ -70,7 +71,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListHolder holder, final int position) {
 
 //        Glide.with(context)
 //                .load(mPlanetList.get(position).getImage())
@@ -85,6 +86,80 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
 
 
 
+
+
+        holder.imageViewfavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (holder.textViewfavimage.getText().toString() == "Dark")
+                {
+                    holder.imageViewfavouritedark.setVisibility(View.VISIBLE);
+                    holder.imageViewfavourite.setVisibility(View.GONE);
+                }
+                else
+                {
+                    holder.imageViewfavourite.setVisibility(View.VISIBLE);
+                    holder.imageViewfavouritedark.setVisibility(View.GONE);
+                }
+
+            }
+        });
+
+        holder.imageViewfavouritedark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.textViewfavimage.getText().toString() == "Dark")
+                {
+                    holder.imageViewfavourite.setVisibility(View.VISIBLE);
+                    holder.imageViewfavouritedark.setVisibility(View.GONE);
+
+                }
+                else
+                {
+                    holder.imageViewfavouritedark.setVisibility(View.VISIBLE);
+                    holder.imageViewfavourite.setVisibility(View.GONE);
+                }
+            }
+        });
+
+//        if (selectedPosition == position)
+//        {
+//            holder.imageViewfavouritedark.setVisibility(View.VISIBLE);
+//            holder.imageViewfavourite.setVisibility(View.GONE);
+//        }
+//        else
+//        {
+//            holder.imageViewfavouritedark.setVisibility(View.GONE);
+//            holder.imageViewfavourite.setVisibility(View.VISIBLE);
+//        }
+//
+//        holder.imageViewfavouritedark.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                selectedPosition = position;
+//                notifyDataSetChanged();
+////                if (holder.imageViewcheck.isEnabled())
+////                {
+////                    holder.imageViewcheck.setVisibility(View.GONE);
+////                }
+////                else
+////                {
+////                    holder.imageViewcheck.setVisibility(View.VISIBLE);
+////                }
+//
+//            }
+//        });
+//
+//        holder.imageViewfavourite.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                selectedPosition = position;
+//                notifyDataSetChanged();
+//            }
+//        });
+
        // holder.imageViewitem.se(mPlanetList.get(position).getImage());
     }
 
@@ -94,7 +169,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
     }
 
     public class ListHolder extends RecyclerView.ViewHolder {
-        TextView textViewitemname,textViewsubitemname,textViewrate;
+        TextView textViewitemname,textViewsubitemname,textViewrate,textViewfavimage;
         ImageView imageViewitem, imageViewcart, imageViewfavourite, imageViewfavouritedark;
         //LinearLayout parentlayout;
         public ListHolder(View itemView) {
@@ -107,6 +182,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
             imageViewcart=(ImageView) itemView.findViewById(R.id.imagecart);
             imageViewfavourite = (ImageView) itemView.findViewById(R.id.imagefavourite);
             imageViewfavouritedark = (ImageView) itemView.findViewById(R.id.imagefillfavourite);
+            textViewfavimage = (TextView) itemView.findViewById(R.id.tvfavimg);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -138,8 +214,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
                     if(mlistner != null){
                         int position = getAdapterPosition();
                         if(position != RecyclerView.NO_POSITION){
-                            imageViewfavourite.setVisibility(View.GONE);
-                            imageViewfavouritedark.setVisibility(View.VISIBLE);
+//                            imageViewfavourite.setVisibility(View.GONE);
+//                            imageViewfavouritedark.setVisibility(View.VISIBLE);
                             mlistner.iconFavouriteImageViewOnClick(v, getAdapterPosition());
                         }
                     }
@@ -152,8 +228,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ListHolder> {
                     if(mlistner != null){
                         int position = getAdapterPosition();
                         if(position != RecyclerView.NO_POSITION){
-                            imageViewfavourite.setVisibility(View.VISIBLE);
-                            imageViewfavouritedark.setVisibility(View.GONE);
+//                            imageViewfavourite.setVisibility(View.VISIBLE);
+//                            imageViewfavouritedark.setVisibility(View.GONE);
                             mlistner.iconDarkFavouriteImageViewOnClick(v, getAdapterPosition());
                         }
                     }
