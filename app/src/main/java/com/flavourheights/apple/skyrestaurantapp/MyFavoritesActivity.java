@@ -40,11 +40,13 @@ public class MyFavoritesActivity extends AppCompatActivity {
         path = globalVariable.getconstr();
         username = globalVariable.getUsername();
 
+        new getFavouriteItem().execute();
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclefavourite);
         recyclerView.setLayoutManager(new LinearLayoutManager(MyFavoritesActivity.this));
     }
 
-    public class addCartItem extends AsyncTask<String, String, String> {
+    public class getFavouriteItem extends AsyncTask<String, String, String> {
 
         @Override
         protected void onPreExecute() {
@@ -55,13 +57,13 @@ public class MyFavoritesActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
 
             shh= new ServiceHandler();
-            String url= path + "Cart/GetCartItems";
+            String url= path + " Registration/GetFavouriteData";
             Log.d("Url",">"+url);
 
             try {
                 List<NameValuePair> params2 = new ArrayList<>();
-                params2.add(new BasicNameValuePair("UserName", username));
 
+                params2.add(new BasicNameValuePair("UserName", username));
 
                 String jsonStr = shh.makeServiceCall(url, ServiceHandler.POST, params2);
 
@@ -76,9 +78,8 @@ public class MyFavoritesActivity extends AppCompatActivity {
                         rate = a1.getString("ItemRate");
                         image = a1.getString("ListImg");
 
-//                        FavouritePlanet planet1 = new ItemPlanet(itemname,subitemname,rate,image);
-//                        mPlanetList.add(planet1);
-
+                       FavouritePlanet planet = new FavouritePlanet(itemname, subitemname, rate, image);
+                       mPlanetList.add(planet);
                     }
                 }
             }catch (JSONException e){
