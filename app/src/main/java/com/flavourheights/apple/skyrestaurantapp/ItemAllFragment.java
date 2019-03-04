@@ -434,7 +434,7 @@ public class ItemAllFragment extends Fragment{
 
             try {
                 List<NameValuePair> params2 = new ArrayList<>();
-                params2.add(new BasicNameValuePair("Username",user));
+                params2.add(new BasicNameValuePair("UserName",user));
                 params2.add(new BasicNameValuePair("ItemName",itemname));
                 params2.add(new BasicNameValuePair("SubItemName",subitem1));
                 params2.add(new BasicNameValuePair("ItemRate",rate));
