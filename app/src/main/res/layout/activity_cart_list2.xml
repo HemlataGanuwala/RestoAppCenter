@@ -23,15 +23,15 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/comfortaa_light"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="Cart List"
-            android:textColor="@color/colorsplash"
-            android:textSize="24sp" />
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/comfortaa_light"
+                android:gravity="center"
+                android:text="Cart List"
+                android:textColor="@color/colorsplash"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imgmenupencile"

@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "620562779615",
-    "firebase_url": "https://flavour-heights.firebaseio.com",
-    "project_id": "flavour-heights",
-    "storage_bucket": "flavour-heights.appspot.com"
+    "project_number": "720931074122",
+    "firebase_url": "https://flavour-heights-1549445905837.firebaseio.com",
+    "project_id": "flavour-heights-1549445905837",
+    "storage_bucket": "flavour-heights-1549445905837.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:620562779615:android:992faf95eff7b64c",
+        "mobilesdk_app_id": "1:720931074122:android:401eafa63529f1da",
         "android_client_info": {
-          "package_name": "com.flavourheights.apple.skyrestaurantapp"
+          "package_name": "com.flavourheight.apple.skyrestaurantapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "620562779615-rpfvf64son2rfvpe91l3hk3vlpqioljo.apps.googleusercontent.com",
+          "client_id": "720931074122-h228ubeh68sfbqodf9mhi5p2on0ipi9k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flavourheight.apple.skyrestaurantapp",
+            "certificate_hash": "803e31c111aff20548ec3666c3d335d17b4eb0bd"
+          }
+        },
+        {
+          "client_id": "720931074122-u5f4u0m22c3brlr8v62u55ndr14vj78d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB7wvgmv6EcFckctVqLXSEJtSqI6GNZDtM"
+          "current_key": "AIzaSyCrE6YLhae8DP5qvUPvnif91J4Tt9UzIVg"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720931074122-u5f4u0m22c3brlr8v62u55ndr14vj78d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

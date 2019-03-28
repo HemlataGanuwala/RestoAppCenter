@@ -6,7 +6,7 @@
         android:icon="@drawable/icon_check"
         android:iconTint="@android:color/white"
         android:title="List"
-        app:showAsAction="always"></item>
+        app:showAsAction="ifRoom"></item>
 
 
 </menu>

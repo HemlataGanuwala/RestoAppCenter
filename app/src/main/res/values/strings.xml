@@ -3,11 +3,12 @@
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
     <string name="splash_title">Flavour Heights</string>
-    <string name="facebook_app_id">1031290867079674</string>
-    <string name="fb_login_protocol_scheme">fb1031290867079674</string>
+    <string name="facebook_app_id">317651728935963</string>
+    <string name="fb_login_protocol_scheme">fb317651728935963</string>
     <string name="title_location_permission"></string>
     <string name="text_location_permission"></string>
     <string name="ok"></string>
+    <!--<string name="default_web_client_id">720931074122-2pv2vm9qp5rjkapvavg0j184qr2i8mrk.apps.googleusercontent.com</string>-->
     <!--<string name="facebook_app_id">791721327862294</string>-->
     <!--<string name="fb_login_protocol_scheme">fb791721327862294</string>-->
 

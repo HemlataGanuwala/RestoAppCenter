@@ -29,9 +29,10 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="center"
+                android:paddingRight="15sp"
                 android:text="Money Wallet"
                 android:textColor="@color/colorsplash"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </android.support.v7.widget.Toolbar>
@@ -51,7 +52,7 @@
             android:paddingTop="30dp"
             android:text="Wallet Balance"
             android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:fontFamily="@font/almendra_display" />
 

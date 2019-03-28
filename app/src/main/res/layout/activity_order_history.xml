@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".OrderHistoryActivity">
 
-        <android.support.v7.widget.Toolbar
+    <android.support.v7.widget.Toolbar
             android:id="@+id/toolbarorderhis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,36 +19,71 @@
                 android:layout_height="30dp"
                 android:src="@drawable/icon_back"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Order History"
-                android:gravity="center"
-                android:textColor="@color/colorsplash"
-                android:textSize="24sp"
-                android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/comfortaa_light"
+            android:gravity="center"
+            android:paddingRight="15sp"
+            android:text="Order History"
+            android:textColor="@color/colorsplash"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         </android.support.v7.widget.Toolbar>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/comfortaa_light"
-        android:textStyle="bold"
-        android:paddingLeft="20dp"
-        android:paddingTop="30dp"
-        android:paddingBottom="20dp"
-        android:text="Your Orders"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleorderhistory"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linearlayoutorderhis1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </android.support.v7.widget.RecyclerView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="No Orders Found"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:fontFamily="@font/comfortaa_light"
+                android:paddingTop="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayoutorderhis"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight=".10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa_light"
+                android:textStyle="bold"
+                android:paddingLeft="20dp"
+                android:gravity="center|left"
+                android:text="Your Orders"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleorderhistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".10">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 

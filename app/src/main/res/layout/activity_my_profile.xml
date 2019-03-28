@@ -22,12 +22,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="My Profile"
+            android:fontFamily="@font/comfortaa_light"
             android:gravity="center"
+            android:paddingRight="15dp"
+            android:text="My Profile"
             android:textColor="@color/colorsplash"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:fontFamily="@font/comfortaa_light"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -43,21 +44,26 @@
             android:layout_weight=".80">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight=".40">
+                android:layout_gravity="center"
+                android:layout_weight=".40"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgprofilepic"
-                    android:layout_width="130dp"
-                    android:layout_height="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp" />
+                    android:background="@drawable/bg_profilepic"
+                    android:padding="20dp"
+                    android:src="@drawable/myprofile" />
 
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/rggender"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -105,7 +111,6 @@
                 android:layout_weight="1"
                 android:paddingLeft="20dp"
                 android:text="First Name*"
-                android:textColor="@color/browser_actions_title_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/comfortaa_light" />
@@ -119,6 +124,7 @@
                 android:layout_weight=".95"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="top|left"
+                android:inputType="textCapWords"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -129,7 +135,6 @@
                 android:layout_weight="1"
                 android:paddingLeft="20dp"
                 android:text="Last Name*"
-                android:textColor="@color/browser_actions_title_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/comfortaa_light" />
@@ -143,6 +148,7 @@
                 android:layout_weight=".95"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="top|left"
+                android:inputType="textCapWords"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -153,7 +159,6 @@
                 android:layout_weight="1"
                 android:paddingLeft="20dp"
                 android:text="Email id*"
-                android:textColor="@color/browser_actions_title_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/comfortaa_light" />
@@ -167,6 +172,7 @@
                 android:layout_weight=".95"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="top|left"
+                android:inputType="textWebEmailAddress"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -177,7 +183,6 @@
                 android:layout_weight="1"
                 android:paddingLeft="20dp"
                 android:text="Mobile no*"
-                android:textColor="@color/browser_actions_title_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/comfortaa_light" />
@@ -191,6 +196,7 @@
                 android:layout_weight=".95"
                 android:fontFamily="@font/comfortaa_light"
                 android:gravity="top|left"
+                android:inputType="phone"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -201,25 +207,46 @@
                 android:layout_weight="1"
                 android:paddingLeft="20dp"
                 android:text="Eating Preference"
-                android:textColor="@color/browser_actions_title_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:fontFamily="@font/comfortaa_light" />
 
-            <EditText
-                android:id="@+id/eteatingpreference"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight=".95"
-                android:drawableRight="@drawable/down_arrow"
-                android:drawablePadding="20dp"
-                android:fontFamily="@font/comfortaa_light"
-                android:gravity="top|left"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/eteatingpreference"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight=".95"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="top|left"
+                    android:inputType="textCapWords"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tveatingpreferance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="20dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:inputType="textCapWords"
+                    android:textColor="@color/black"
+                    app:fontFamily="@font/comfortaa_light"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

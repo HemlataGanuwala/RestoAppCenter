@@ -17,21 +17,21 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <ImageView
-            android:id="@+id/imgvback"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/icon_back" />
+        <!--<ImageView-->
+            <!--android:id="@+id/imgofferback"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:background="@drawable/icon_back" />-->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_light"
             android:gravity="center"
             android:paddingRight="10dp"
             android:text="Offers"
             android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:fontFamily="@font/comfortaa_light"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>

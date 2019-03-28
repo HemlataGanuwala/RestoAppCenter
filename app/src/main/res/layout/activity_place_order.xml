@@ -21,12 +21,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Place Order"
-            android:gravity="center"
-            android:textColor="@color/colorsplash"
-            android:textSize="24sp"
             android:fontFamily="@font/comfortaa_light"
-            android:textStyle="bold"/>
+            android:gravity="center"
+            android:paddingRight="15dp"
+            android:text="Place Order"
+            android:textColor="@color/colorsplash"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -93,7 +94,7 @@
                         android:layout_height="0.3dp"
                         android:background="#cdc6c6" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/etmobileno"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -101,6 +102,7 @@
                         android:drawableLeft="@drawable/icon_phone"
                         android:drawablePadding="10dp"
                         android:gravity="center|left"
+                        android:maxLength="10"
                         android:paddingLeft="10dp"
                         android:textSize="14sp"
                         android:textStyle="bold"

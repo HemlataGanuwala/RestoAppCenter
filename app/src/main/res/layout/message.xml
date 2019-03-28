@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutmessage"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorsplash"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
 
         <ImageView
@@ -21,14 +20,32 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="No Item In Cart"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:fontFamily="@font/comfortaa_light"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="50dp"
+            android:src="@drawable/cart_bg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_light"
+            android:gravity="center"
+            android:paddingBottom="200dp"
+            android:text="Your cart is empty. Add something in cart "
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

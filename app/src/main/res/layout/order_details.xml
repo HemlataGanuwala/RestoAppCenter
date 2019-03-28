@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@color/colorsplash"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvorderdetailssubitemname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|left"
+            android:layout_weight="1"
+            android:fontFamily="@font/comfortaa_light"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvitemrate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|left"
+                android:layout_weight=".50"
+                android:drawableLeft="@drawable/icon_rupee"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:paddingLeft="20dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvtotalamount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|left"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/icon_rupee"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/comfortaa_light"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|left"
+                android:layout_weight="1"
+                android:fontFamily="@font/comfortaa_light"
+                android:paddingLeft="20dp"
+                android:text="Quantity"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvquantity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|left"
+                android:layout_weight=".35"
+                android:fontFamily="@font/comfortaa_light"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cdc6c6" />
+
+</LinearLayout>

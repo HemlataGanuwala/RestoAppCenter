@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/swipecartlist"
     android:fitsSystemWindows="true"
     tools:openDrawer="end"
     tools:context=".CartListActivity">
@@ -23,21 +23,21 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-            <ImageView
-                android:id="@+id/img_back"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/icon_back" />
+            <!--<ImageView-->
+                <!--android:id="@+id/img_back"-->
+                <!--android:layout_width="25dp"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:src="@drawable/icon_back" />-->
 
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:text="Cart List"
                 android:textColor="@color/colorsplash"
-                android:textSize="24sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <!--<ImageView-->
                 <!--android:layout_width="30dp"-->
@@ -154,4 +154,4 @@
 
     </android.support.design.widget.NavigationView>
 
-</android.support.v4.widget.DrawerLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

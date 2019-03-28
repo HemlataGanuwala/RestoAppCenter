@@ -23,9 +23,10 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/comfortaa_light"
             android:gravity="center"
+            android:paddingRight="15dp"
             android:text="Add Address"
             android:textColor="@color/colorsplash"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>
@@ -48,7 +49,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight=".75"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <Button
@@ -66,6 +67,7 @@
                         android:textStyle="bold" />
 
                     <LinearLayout
+                        android:id="@+id/lineaspin"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -174,11 +176,12 @@
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="center|left"
                         android:hint="Pin Code"
+                        android:inputType="number"
+                        android:maxLength="6"
                         android:paddingLeft="20dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/cardview_dark_background"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -198,11 +201,11 @@
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="center|left"
                         android:hint="House number/name"
+                        android:inputType="textCapWords"
                         android:paddingLeft="20dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/cardview_dark_background"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -222,11 +225,11 @@
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="center|left"
                         android:hint="LandMark/AppartmentName"
+                        android:inputType="textCapWords"
                         android:paddingLeft="20dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/cardview_dark_background"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -247,11 +250,11 @@
                         android:fontFamily="@font/comfortaa_light"
                         android:gravity="center|left"
                         android:hint="LocalityName"
+                        android:inputType="textCapWords"
                         android:paddingLeft="20dp"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textColor="@color/black"
-                        android:textColorHint="@color/cardview_dark_background"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -281,8 +284,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center|left"
                         android:hint="Name*"
-                        android:paddingLeft="20dp"
-                        android:textColorHint="@color/browser_actions_title_color" />
+                        android:paddingLeft="20dp" />
 
                     <EditText
                         android:id="@+id/etaddressname"
@@ -292,6 +294,8 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/comfortaa_light"
+                        android:gravity="center|left"
+                        android:inputType="textPersonName|textCapWords"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -300,8 +304,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="10-digit mobile no*"
-                        android:paddingLeft="20dp"
-                        android:textColorHint="@color/browser_actions_title_color" />
+                        android:paddingLeft="20dp" />
 
                     <EditText
                         android:id="@+id/etaddressmobileno"
@@ -311,6 +314,9 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/comfortaa_light"
+                        android:gravity="center|left"
+                        android:inputType="phone"
+                        android:maxLength="10"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -319,8 +325,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Alternate Phone Number (Optional)"
-                        android:paddingLeft="20dp"
-                        android:textColorHint="@color/browser_actions_title_color" />
+                        android:paddingLeft="20dp" />
 
                     <EditText
                         android:id="@+id/etaddressalternateno"
@@ -330,6 +335,9 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/comfortaa_light"
+                        android:gravity="center|left"
+                        android:inputType="phone"
+                        android:maxLength="10"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -356,7 +364,6 @@
                         android:paddingLeft="20dp"
                         android:text="Address Type"
                         android:textAllCaps="false"
-                        android:textColor="@color/cardview_dark_background"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -381,7 +388,6 @@
                                 android:fontFamily="@font/comfortaa_light"
                                 android:paddingLeft="5dp"
                                 android:text="Home Address"
-                                android:textColor="@color/cardview_dark_background"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 
@@ -394,7 +400,6 @@
                                 android:fontFamily="@font/comfortaa_light"
                                 android:paddingLeft="5dp"
                                 android:text="Office/Work Address"
-                                android:textColor="@color/cardview_dark_background"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
 
@@ -424,6 +429,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/bg_button"
                         android:fontFamily="@font/comfortaa_light"
                         android:text="Save"

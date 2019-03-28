@@ -25,9 +25,10 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/comfortaa_light"
             android:gravity="center"
+            android:paddingLeft="15sp"
             android:text="My Account"
             android:textColor="@color/colorsplash"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>
@@ -180,6 +181,7 @@
             android:background="#cdc6c6" />
 
         <LinearLayout
+            android:id="@+id/linearlayoutlogout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

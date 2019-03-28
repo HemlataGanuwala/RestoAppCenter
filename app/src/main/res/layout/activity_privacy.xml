@@ -27,11 +27,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/comfortaa_light"
-                android:textStyle="bold"
                 android:gravity="center"
+                android:paddingRight="15dp"
                 android:text="Term and Condition"
                 android:textColor="@color/colorsplash"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </android.support.v7.widget.Toolbar>
 

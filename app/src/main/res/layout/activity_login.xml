@@ -31,13 +31,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/comfortaa_light"
                     android:gravity="center"
                     android:paddingRight="30dp"
                     android:text="Login"
                     android:textColor="#fff"
-                    android:textSize="28sp"
-                    android:fontFamily="@font/comfortaa_light"
-                    android:textStyle="bold"/>
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </android.support.v7.widget.Toolbar>
 
@@ -78,7 +78,7 @@
                 android:drawablePadding="5dp"
                 android:ems="10"
                 android:fontFamily="@font/comfortaa_light"
-                android:hint="Email Id/Mobileno"
+                android:hint="Email Id/Mobile no"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="15dp"
                 android:textSize="14sp"

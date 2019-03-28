@@ -21,12 +21,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="My Addresses"
-            android:gravity="center"
             android:fontFamily="@font/comfortaa_light"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:textColor="@color/colorsplash"/>
+            android:gravity="center"
+            android:paddingRight="15sp"
+            android:text="My Addresses"
+            android:textColor="@color/colorsplash"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>
 

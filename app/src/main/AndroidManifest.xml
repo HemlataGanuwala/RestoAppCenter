@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.flavourheights.apple.skyrestaurantapp">
+    package="com.flavourheight.apple.skyrestaurantapp">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -9,6 +9,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -18,17 +19,43 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EatingPreferenceActivity"></activity>
-        <activity android:name=".MyFavoritesActivity" />
-        <activity android:name=".MyAddressActivity" />
-        <activity android:name=".MyProfileActivity" />
-        <activity android:name=".AddAddress2Activity" />
-        <activity android:name=".OnlinePaymentActivity" />
-        <activity android:name=".MyAccountActivity" />
-        <activity android:name=".MakePaymentActivity" />
-        <activity android:name=".SelectDateTimeActivity" />
-        <activity android:name=".AddAddressActivity" />
-        <activity android:name=".PlaceOrderActivity" />
+        <activity android:name=".OrderDetailsActivity"></activity>
+        <activity
+            android:name=".MyOrderHistoryActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".EatingPreferenceActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MyFavoritesActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MyAddressActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MyProfileActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".AddAddress2Activity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".OnlinePaymentActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MyAccountActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MakePaymentActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".SelectDateTimeActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".AddAddressActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".PlaceOrderActivity"
+            android:launchMode="singleTask" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,13 +68,27 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".EditCartActivity" />
-        <activity android:name=".CartList2Activity" />
-        <activity android:name=".OrderHistoryActivity" />
-        <activity android:name=".CartListActivity" />
-        <activity android:name=".ReferCodeActivity" />
-        <activity android:name=".MoneyWalletActivity" />
-        <activity android:name=".ShareActivity" />
+        <activity
+            android:name=".EditCartActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".CartList2Activity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".OrderHistoryActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".CartListActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ReferCodeActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".MoneyWalletActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ShareActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,28 +106,32 @@
         <activity android:name=".MainDashActivity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".PrivacyActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>

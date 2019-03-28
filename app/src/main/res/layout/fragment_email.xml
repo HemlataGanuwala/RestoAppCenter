@@ -38,11 +38,11 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/bg_button"
             android:fontFamily="@font/comfortaa_light"
-            android:textStyle="bold"
             android:text="Send"
             android:textAllCaps="false"
             android:textColor="@color/colorsplash"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
