@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'AndroidKey'
-            keyPassword '111222333'
-            storeFile file('E:/00D Drive Backup/00WorkingProject/SkyvisionRelease/ResApkFolder/resapk.jks')
-            storePassword '111222333'
-        }
-    }
+//    signingConfigs {
+//        config {
+//            keyAlias 'AndroidKey'
+//            keyPassword '111222333'
+//            storeFile file('E:/00D Drive Backup/00WorkingProject/SkyvisionRelease/ResApkFolder/resapk.jks')
+//            storePassword '111222333'
+//        }
+//    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.flavourheight.apple.skyrestaurantapp"
@@ -24,11 +24,11 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            debuggable true
-            signingConfig signingConfigs.config
-            minifyEnabled true
-        }
+//        debug {
+//            debuggable true
+//            signingConfig signingConfigs.config
+//            minifyEnabled true
+//        }
     }
 }
 
